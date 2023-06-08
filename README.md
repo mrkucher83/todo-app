@@ -5,6 +5,7 @@
 - golang-migrate (to work with DB migrations): `brew install migrate`
 - sqlx (to work with DB): `go get -u github.com/jmoiron/sqlx`
 - godotenv (to work with env): `go get -u github.com/joho/godotenv`
+- logrus (to work with logging): `go get -u github.com/sirupsen/logrus`
 
 ## Docker
 - DataBase: PostgresQL: `docker pull postrgres`

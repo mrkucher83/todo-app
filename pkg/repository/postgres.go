@@ -1,11 +1,17 @@
-package repository
+package repository // Package repository for database connection logic
 
 import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
 )
 
-// database connection logic
+const (
+	usersTable      = "users"
+	todoListsTable  = "todo_lists"
+	usersListsTable = "users_lists"
+	todoItemsTable  = "todo_items"
+	listsItemsTable = "lists_items"
+)
 
 type Config struct {
 	Host     string
