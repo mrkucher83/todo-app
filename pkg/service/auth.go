@@ -6,14 +6,11 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/mrkucher83/todo-app"
 	"github.com/mrkucher83/todo-app/pkg/repository"
+	"os"
 	"time"
 )
 
-const (
-	salt       = "asdfskd12i34dsfkj"
-	signingKey = "lkjxcvnsndfu123jsud7h"
-	tokenTTL   = 12 * time.Hour
-)
+const tokenTTL = 12 * time.Hour
 
 type tokenClaims struct {
 	jwt.StandardClaims
@@ -47,12 +44,12 @@ func (s *AuthService) GenerateToken(username, password string) (string, error) {
 		user.Id,
 	})
 
-	return token.SignedString([]byte(signingKey))
+	return token.SignedString([]byte(os.Getenv("SIGNING_KEY")))
 }
 
 func generatePasswordHash(password string) string {
 	hash := sha1.New()
 	hash.Write([]byte(password))
 
-	return fmt.Sprintf("%x", hash.Sum([]byte(salt)))
+	return fmt.Sprintf("%x", hash.Sum([]byte(os.Getenv("SALT"))))
 }
