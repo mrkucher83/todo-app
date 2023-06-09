@@ -6,6 +6,7 @@
 - sqlx (to work with DB): `go get -u github.com/jmoiron/sqlx`
 - godotenv (to work with env): `go get -u github.com/joho/godotenv`
 - logrus (to work with logging): `go get -u github.com/sirupsen/logrus`
+- jwt-go (to work with a token): `go get -u github.com/dgrijalva/jwt-go`
 
 ## Docker
 - DataBase: PostgresQL: `docker pull postrgres`
