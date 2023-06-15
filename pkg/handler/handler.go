@@ -1,3 +1,4 @@
+// Package handler - работа с HTTP (запросы пользователя)
 package handler
 
 import (
@@ -24,7 +25,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		auth.POST("/sign-in", h.signIn)
 	}
 
-	api := router.Group("/api")
+	api := router.Group("/api", h.userIdentity)
 	{
 		lists := api.Group("/lists")
 		{
