@@ -7,6 +7,7 @@
 - godotenv (to work with env): `go get -u github.com/joho/godotenv`
 - logrus (to work with logging): `go get -u github.com/sirupsen/logrus`
 - golang-jwt (to work with a token): `go get -u github.com/golang-jwt/jwt/v5`
+- swag (to generate swagger documentation) `go install github.com/swaggo/swag/cmd/swag@latest`
 
 ## Docker
 
