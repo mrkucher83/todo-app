@@ -10,5 +10,5 @@
 - swag (to generate swagger documentation) `go install github.com/swaggo/swag/cmd/swag@latest`
 
 ## Docker
-
-- DataBase: PostgresQL: `docker pull postrgres`
+- Накатываем миграции:
+docker run -v {{ app dir }}/schema:/migrations --network host migrate/migrate -path=/migrations/ -database "postgres://postgres:qwerty@localhost:5432/postgres?sslmode=disable" up
